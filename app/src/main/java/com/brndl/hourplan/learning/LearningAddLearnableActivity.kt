@@ -2,6 +2,7 @@ package com.brndl.hourplan.learning
 
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
@@ -12,7 +13,10 @@ import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.net.toFile
 import androidx.exifinterface.media.ExifInterface
@@ -95,15 +99,9 @@ class LearningAddLearnableActivity : AppCompatActivity() {
 
         imageViewAddImage.setOnClickListener {
             if(imageUri == null) {
-                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                imageUri = FileProvider.getUriForFile(
-                    this,
-                    "com.brndl.hourplan.provider",
-                    getOutputMediaFile()
-                )
-
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
-                startActivityForResult(intent, 11)
+                if(requestCameraPermission()) {
+                    startCamera()
+                }
             } else {
                 imageViewAddImage.setImageResource(R.drawable.ic_add_a_photo)
                 imageViewImage.setImageBitmap(null)
@@ -150,6 +148,19 @@ class LearningAddLearnableActivity : AppCompatActivity() {
     }
 
     private var imageUri: Uri? = null
+
+    fun startCamera() {
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        imageUri = FileProvider.getUriForFile(
+            this,
+            "com.brndl.hourplan.provider",
+            getOutputMediaFile()
+        )
+
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
+        startActivityForResult(intent, 11)
+    }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -217,4 +228,64 @@ class LearningAddLearnableActivity : AppCompatActivity() {
             false
         } else true
     }
+
+    private fun requestCameraPermission(): Boolean {
+        if (ContextCompat.checkSelfPermission(
+                applicationContext,
+                android.Manifest.permission.CAMERA
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
+            return true
+        } else {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(
+                    this@LearningAddLearnableActivity,
+                    android.Manifest.permission.CAMERA
+                )
+            ) {
+
+                AlertDialog.Builder(this@LearningAddLearnableActivity)
+                    .setTitle(R.string.permission_needed)
+                    .setTitle(R.string.camera_permission_needed)
+                    .setCancelable(false)
+                    .setPositiveButton(
+                        R.string.ok
+                    ) { _, _ ->
+                        ActivityCompat.requestPermissions(
+                            this@LearningAddLearnableActivity,
+                            arrayOf(android.Manifest.permission.CAMERA),
+                            cameraPermissionCode
+                        )
+                    }
+                    .setNegativeButton(
+                        R.string.cancel
+                    ) { p0, _ ->
+                        p0?.dismiss()
+                    }
+                    .create().show()
+
+            } else {
+                ActivityCompat.requestPermissions(
+                    this@LearningAddLearnableActivity,
+                    arrayOf(android.Manifest.permission.CAMERA),
+                    cameraPermissionCode
+                )
+            }
+            return false
+        }
+    }
+
+    private val cameraPermissionCode = 1
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == cameraPermissionCode) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                startCamera()
+        }
+    }
+
 }
