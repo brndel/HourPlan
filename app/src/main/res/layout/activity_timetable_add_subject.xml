@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+		tools:context=".timetable.TimetableAddSubjectActivity"
+		android:orientation="vertical">
+
+	<androidx.appcompat.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/colorPrimary"
+			android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+			app:popupTheme="@style/Theme.AppCompat.Light"
+			app:title="Add subject to timetable"
+			android:layout_alignParentTop="true"/>
+	<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/recyclerView"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent" android:layout_below="@+id/toolbar"
+			android:layout_above="@+id/linearLayout"/>
+
+	<LinearLayout
+			android:id="@+id/linearLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_alignParentBottom="true">
+
+		<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="@android:color/darker_gray"/>
+
+		<EditText
+				android:id="@+id/edit_room"
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="0.6"
+				android:hint="@string/room"
+				android:inputType="text" />
+
+		<include
+			layout="@layout/subject_item"
+			android:id="@+id/subjectItem"
+		/>
+
+
+		<Button
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/addButton"
+				android:text="@string/add_subject"/>
+
+	</LinearLayout>
+
+</RelativeLayout>

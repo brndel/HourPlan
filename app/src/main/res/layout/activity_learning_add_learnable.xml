@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:isScrollContainer="true"
+		android:orientation="vertical"
+		tools:context=".learning.LearningAddLearnableActivity">
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+		<androidx.appcompat.widget.Toolbar
+				android:id="@+id/toolbar"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="?attr/colorPrimary"
+				android:minHeight="?attr/actionBarSize"
+				android:theme="?attr/actionBarTheme"
+				app:menu="@menu/camera_delete_menu"
+				app:navigationIcon="@drawable/ic_arrow_back"
+				app:title="@string/add" />
+
+		<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/text_input_question"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="16dp"
+				android:layout_marginTop="16dp"
+				android:layout_marginRight="16dp"
+				app:errorEnabled="true">
+
+			<com.google.android.material.textfield.TextInputEditText
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/question"
+					android:inputType="textNoSuggestions" />
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/text_input_answer"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="16dp"
+				android:layout_marginRight="16dp"
+				app:errorEnabled="true">
+
+			<com.google.android.material.textfield.TextInputEditText
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/answer"
+					android:inputType="textNoSuggestions" />
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/text_input_extra_Info"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="16dp"
+				android:layout_marginRight="16dp"
+				app:errorEnabled="true">
+
+			<com.google.android.material.textfield.TextInputEditText
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/extra_information"
+					android:inputType="textNoSuggestions" />
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<ImageView
+				android:id="@+id/imageViewAddImage"
+				android:layout_width="32dp"
+				android:layout_height="32dp"
+				android:layout_gravity="start"
+				android:layout_marginStart="8dp"
+				android:layout_marginTop="4dp"
+				android:tint="#323232"
+				app:srcCompat="@drawable/ic_add_a_photo" />
+
+		<ImageView
+				android:id="@+id/imageViewImage"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="2dp"
+				android:adjustViewBounds="true" />
+
+		<Button
+				android:id="@+id/addButton"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="32dp"
+				android:text="@string/add" />
+
+		<Button
+				android:id="@+id/addLeaveButton"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/add_leave" />
+
+	</LinearLayout>
+
+</ScrollView>

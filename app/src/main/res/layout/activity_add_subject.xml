@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".subjects.AddSubjectActivity"
+		android:id="@+id/coordinatorLayout">
+
+
+	<androidx.appcompat.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?attr/colorPrimary"
+			android:minHeight="?attr/actionBarSize"
+			android:theme="?attr/actionBarTheme"
+			app:menu="@menu/delete_menu"
+			app:navigationIcon="@drawable/ic_arrow_back"
+			app:title="@string/add_subject" />
+
+		<LinearLayout
+				android:id="@+id/linearLayout"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_below="@+id/toolbar"
+				android:padding="16dp">
+
+			<com.google.android.material.textfield.TextInputLayout
+					android:id="@+id/text_input_subject"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					app:errorEnabled="true">
+
+				<com.google.android.material.textfield.TextInputEditText
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:hint="@string/subject"
+						android:inputType="text"/>
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+					android:id="@+id/text_input_teacher"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					app:errorEnabled="true">
+
+				<com.google.android.material.textfield.TextInputEditText
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:hint="@string/teacher"
+						android:inputType="text"
+				/>
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+						  android:background="#C8C8C8" android:id="@+id/color_layout">
+
+				<Button
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/select_color"
+						android:id="@+id/button_select_color"/>
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+
+		<include
+				layout="@layout/subject_item"
+				android:id="@+id/subjectItem"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/linearLayout"
+				android:layout_margin="4dp"
+		>
+
+
+		</include>
+
+	<Button
+			android:id="@+id/addButton"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_gravity="bottom"
+			android:text="@string/add_subject"
+			android:textSize="25sp"
+			app:layout_dodgeInsetEdges="bottom" />
+
+</RelativeLayout>

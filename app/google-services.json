@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "819296908146",
+    "firebase_url": "https://hourplan-2f53b.firebaseio.com",
+    "project_id": "hourplan-2f53b",
+    "storage_bucket": "hourplan-2f53b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819296908146:android:ff3fcf82cd0df8247fa3eb",
+        "android_client_info": {
+          "package_name": "com.brndl.hourplan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819296908146-r99i1ks08fn2rrf2fp86undvv0ss4d76.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQs9puqgOUhW3QkbYAlb9wm53hD-ZapcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819296908146-r99i1ks08fn2rrf2fp86undvv0ss4d76.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:id="@+id/cardView"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="2dp"
+		android:layout_marginEnd="2dp"
+		android:layout_marginBottom="4dp"
+		app:cardBackgroundColor="#E6E6E6"
+		app:cardCornerRadius="4dp">
+
+	<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+
+		<ImageView
+				android:id="@+id/imageViewUnselect"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentStart="true"
+				android:tint="#787878"
+				app:srcCompat="@drawable/ic_wrong" />
+
+		<TextView
+				android:id="@+id/textView"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentTop="true"
+				android:layout_marginStart="2dp"
+				android:layout_marginTop="4dp"
+				android:layout_marginEnd="4dp"
+				android:layout_marginBottom="4dp"
+				android:layout_toStartOf="@+id/imageViewSplit"
+				android:layout_toEndOf="@+id/imageViewUnselect"
+				android:textColor="#000000"
+				android:textSize="16sp"
+				tools:text="this is some selected text" />
+
+		<ImageView
+				android:id="@+id/imageViewDelete"
+				android:layout_width="32dp"
+				android:layout_height="32dp"
+				android:layout_alignParentEnd="true"
+				android:padding="4dp"
+				android:tint="#FF3264"
+				app:srcCompat="@drawable/ic_delete" />
+
+		<ImageView
+				android:id="@+id/imageViewSplit"
+				android:layout_width="32dp"
+				android:layout_height="32dp"
+				android:layout_toStartOf="@+id/imageViewDelete"
+				android:padding="4dp"
+				android:tint="#646464"
+				app:srcCompat="@drawable/ic_split" />
+	</RelativeLayout>
+
+</androidx.cardview.widget.CardView>

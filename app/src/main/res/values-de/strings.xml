@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="drawer_home">Hauptmenü</string>
+	<string name="drawer_timetable">Stundenplan</string>
+	<string name="friday">Freitag</string>
+	<string name="friday_short">Fr</string>
+	<string name="monday">Montag</string>
+	<string name="monday_short">Mo</string>
+	<string name="navigation_drawer_close">Schließe Navigationsmenü</string>
+	<string name="navigation_drawer_open">Öffne Navigationsmenü</string>
+	<string name="thursday">Donnerstag</string>
+	<string name="thursday_short">Do</string>
+	<string name="tuesday">Dienstag</string>
+	<string name="tuesday_short">Di</string>
+	<string name="wednesday">Mittwoch</string>
+	<string name="wednesday_short">Mi</string>
+	<string name="drawer_group_settings">Einstellungen</string>
+	<string name="drawer_subjects">Fächer</string>
+	<string name="add_subject">Fach hinzufügen</string>
+	<string name="room">Raum</string>
+	<string name="teacher">Lehrer</string>
+	<string name="subject">Fach</string>
+	<string name="select_color">Farbe auswählen</string>
+	<string name="field_cant_be_empty">Feld kann nicht leer sein</string>
+	<string name="subject_already_exists">Dieses Fach gibt es schon</string>
+	<string name="update_format">%s updaten</string>
+	<string name="edit_format">%s bearbeiten</string>
+	<string name="edit">Bearbeiten</string>
+	<string name="delete">Löschen</string>
+	<string name="add_subject_to_format">Fach am %s hinzufügen</string>
+	<string name="drawer_substitution">Vertretungsplan</string>
+	<string name="save_changes">Änderungen speichern</string>
+	<string name="today">Heute</string>
+	<string name="tomorrow">Morgen</string>
+	<string name="drawer_learning">Lernen</string>
+	<string name="topic">Thema</string>
+	<string name="new_topic">Neues Thema</string>
+	<string name="add_topic">Thema hinzufügen</string>
+	<string name="topic_already_exists">Dieses Thema hast du schon</string>
+	<string name="answer">Antwort</string>
+	<string name="question">Frage</string>
+	<string name="add">Hinzufügen</string>
+	<string name="extra_information">Extra Informationen</string>
+	<string name="confirm_delete_format">Bist du dir sicher, dass du %s löschen möchtest?</string>
+	<string name="cancel">Abbrechen</string>
+	<string name="no">Nein</string>
+	<string name="yes">Ja</string>
+	<string name="show">Anzeigen</string>
+	<string name="say_the_answer">Sag die Lösung</string>
+	<string name="shame_go_and_learn_more">Schandus Grandus\nGeh jetzt und lern mehr\n\nMarkus ist enttäuscht
+		von dir D:</string>
+	<string name="both_won">Keiner hat gewonnen, ihr seid beide schlecht</string>
+	<string name="saturday">Samstag</string>
+	<string name="saturday_short">Sa</string>
+	<string name="sunday">Sonntag</string>
+	<string name="sunday_short">So</string>
+	<string name="next_day">Nächster Tag</string>
+	<string name="add_leave">Hinzufügen und verlassen</string>
+	<string name="added_format">%s hinzugefügt</string>
+	<string name="test_results">Test Ergebnisse</string>
+	<string name="instantly_known">Sofort gewusst</string>
+	<string name="known_after_trys">Nach einigen Versuchen gewusst</string>
+	<string name="not_known">Nicht gewusst</string>
+	<string name="couldnt_add_format">Konnte %s nicht hinzufügen</string>
+	<string name="add_with_camera">Mit Kamera hinzufügen</string>
+	<string name="permission_needed">Berechtigung benötigt</string>
+	<string name="camera_permission_needed">Kamera Berechtigung benötigt</string>
+	<string name="ok">Ok</string>
+	<string name="nothing_selected">Nichts ausgewählt</string>
+	<string name="combine">Kombinieren</string>
+	<string name="deleted_subject">Gelöschtes Fach</string>
+	<string name="last_format">Zuletzt: %s</string>
+	<string name="error_waiting_for_model">Fehler:\nDas Texterkennungsmodul ist noch nicht
+		heruntergeladen\nWarte darauf, bis es heruntergeladen ist, dies kann einige Minuten
+		dauern.\n
+		Wenn es deutlich länger braucht, versuche google play services zu aktualisieren,
+		das kann helfen</string>
+	<string name="confirm_leave">Bist du dir sicher, das du zurück möchtest? Nicht hinzugefügte
+		Wörter gehen verloren</string>
+	<string name="warning_nothing_found">Warnung:\nKein Text gefunden. Bitte versuche es
+		erneut</string>
+	<string name="warning_no_photo_took">Warnung:\n Du hast keine Foto gemacht</string>
+	<string name="leave">Verlassen</string>
+	<string name="select_topics_and_click_again">Wähle Themen aus und drücke den Knopf dann erneut
+		um diese zu lernen</string>
+	<string name="work_in_progress">In Arbeit</string>
+	<string name="work_in_progress_long">In Arbeit\n(wahrscheinlich noch eine ganze Weile)</string>
+
+</resources>

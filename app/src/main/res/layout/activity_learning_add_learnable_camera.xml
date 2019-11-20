@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:id="@+id/linearLayout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		tools:context=".learning.LearningAddLearnableCameraActivity">
+
+	<androidx.core.widget.NestedScrollView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:scrollbars="vertical">
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:overScrollMode="always">
+
+			<androidx.appcompat.widget.Toolbar
+					android:id="@+id/toolbar"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="?attr/colorPrimary"
+					android:minHeight="?attr/actionBarSize"
+					android:theme="?attr/actionBarTheme"
+					app:navigationIcon="@drawable/ic_arrow_back"
+					app:title="@string/add_with_camera" />
+
+			<ProgressBar
+					android:id="@+id/loadingCircle"
+					style="?android:attr/progressBarStyle"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:indeterminate="true" />
+
+			<TextView
+					android:id="@+id/textViewWarningNothingFound"
+					android:layout_width="match_parent"
+					android:layout_height="64dp"
+					android:background="#FFDC00"
+					android:gravity="center"
+					android:text="@string/warning_nothing_found"
+					android:textColor="#000"
+					android:textStyle="bold"
+					android:visibility="gone" />
+
+			<TextView
+					android:id="@+id/textViewError"
+					android:layout_width="match_parent"
+					android:layout_height="256dp"
+					android:background="#FF0000"
+					android:gravity="center"
+					android:text="@string/error_waiting_for_model"
+					android:textColor="#fff"
+					android:textStyle="bold"
+					android:visibility="gone" />
+
+			<RelativeLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:background="@android:color/darker_gray">
+
+				<ImageView
+						android:id="@+id/imageView"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:adjustViewBounds="true"
+						android:scaleType="fitXY" />
+
+				<RelativeLayout
+						android:id="@+id/cameraTextLayout"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:layout_alignStart="@id/imageView"
+						android:layout_alignTop="@id/imageView"
+						android:layout_alignEnd="@id/imageView"
+						android:layout_alignBottom="@id/imageView">
+
+				</RelativeLayout>
+
+			</RelativeLayout>
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="30dp"
+					android:layout_marginBottom="4dp"
+					android:orientation="horizontal">
+
+				<ImageView
+						android:id="@+id/imageViewUnselectAll"
+						android:layout_width="30dp"
+						android:layout_height="30dp"
+						android:layout_marginEnd="4dp"
+						android:layout_weight="0"
+						android:tint="#646464"
+						android:visibility="gone"
+						app:srcCompat="@drawable/ic_wrong" />
+
+				<View
+						android:layout_width="match_parent"
+						android:layout_height="1dp"
+						android:layout_gravity="center_vertical"
+						android:layout_marginStart="4dp"
+						android:layout_marginTop="8dp"
+						android:layout_marginEnd="4dp"
+						android:layout_weight="1"
+						android:background="#646464" />
+
+				<ImageView
+						android:id="@+id/imageViewDeleteAll"
+						android:layout_width="30dp"
+						android:layout_height="30dp"
+						android:layout_marginStart="4dp"
+						android:layout_weight="0"
+						android:tint="#FF3264"
+						android:visibility="gone"
+						app:srcCompat="@drawable/ic_delete" />
+
+			</LinearLayout>
+
+			<androidx.recyclerview.widget.RecyclerView
+					android:id="@+id/selectedCameraChips"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:nestedScrollingEnabled="false" />
+
+			<LinearLayout
+					android:id="@+id/bottomLineView"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="2dp"
+					android:clipChildren="false"
+					android:clipToPadding="false"
+					android:orientation="vertical"
+					android:visibility="gone">
+
+				<ImageView
+						android:id="@+id/imageAddAll"
+						android:layout_width="32dp"
+						android:layout_height="32dp"
+						android:layout_marginStart="16dp"
+						android:background="@drawable/circle"
+						android:backgroundTint="@color/colorAccent"
+						android:elevation="4dp"
+						android:padding="2dp"
+						android:tint="@android:color/white"
+						android:visibility="gone"
+						app:srcCompat="@drawable/ic_multi_arrow_from_top" />
+
+				<View
+						android:layout_width="match_parent"
+						android:layout_height="1dp"
+						android:layout_marginStart="4dp"
+						android:layout_marginTop="4dp"
+						android:layout_marginEnd="4dp"
+						android:layout_marginBottom="4dp"
+						android:background="#646464" />
+			</LinearLayout>
+
+			<LinearLayout
+					android:id="@+id/textInputLayout"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_marginStart="4dp"
+					android:layout_marginEnd="4dp"
+					android:layout_marginBottom="2dp"
+					android:orientation="vertical"
+					android:visibility="gone">
+
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:orientation="horizontal">
+
+					<ImageView
+							android:id="@+id/imageQuestion"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_vertical"
+							android:layout_weight="0"
+							android:background="@drawable/circle"
+							android:backgroundTint="@color/colorAccent"
+							android:elevation="2dp"
+							android:foreground="@drawable/ripple_white"
+							android:padding="2dp"
+							android:tint="@android:color/white"
+							app:srcCompat="@drawable/ic_arrow_from_top" />
+
+					<EditText
+							android:id="@+id/editTextQuestion"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:ems="10"
+							android:gravity="start|top"
+							android:hint="@string/question"
+							android:imeOptions="actionDone"
+							android:importantForAutofill="no"
+							android:inputType="textNoSuggestions"
+							android:nestedScrollingEnabled="true"
+							android:overScrollMode="always" />
+				</LinearLayout>
+
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:orientation="horizontal">
+
+					<ImageView
+							android:id="@+id/imageAnswer"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_vertical"
+							android:layout_weight="0"
+							android:background="@drawable/circle"
+							android:backgroundTint="@color/colorAccent"
+							android:elevation="2dp"
+							android:foreground="@drawable/ripple_white"
+							android:padding="2dp"
+							android:tint="@android:color/white"
+							app:srcCompat="@drawable/ic_arrow_from_top" />
+
+					<EditText
+							android:id="@+id/editTextAnswer"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:ems="10"
+							android:gravity="start|top"
+							android:hint="@string/answer"
+							android:imeOptions="actionDone"
+							android:importantForAutofill="no"
+							android:inputType="textNoSuggestions"
+							android:nestedScrollingEnabled="true"
+							android:overScrollMode="always" />
+				</LinearLayout>
+
+				<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:orientation="horizontal">
+
+					<ImageView
+							android:id="@+id/imageExtraInfo"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_vertical"
+							android:layout_weight="0"
+							android:background="@drawable/circle"
+							android:backgroundTint="@color/colorAccent"
+							android:elevation="2dp"
+							android:foreground="@drawable/ripple_white"
+							android:padding="2dp"
+							android:tint="@android:color/white"
+							app:srcCompat="@drawable/ic_arrow_from_top" />
+
+					<EditText
+							android:id="@+id/editTextExtraInfo"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:ems="10"
+							android:gravity="start|top"
+							android:hint="@string/extra_information"
+							android:imeOptions="actionDone"
+							android:importantForAutofill="no"
+							android:inputType="textNoSuggestions"
+							android:nestedScrollingEnabled="true"
+							android:overScrollMode="always" />
+				</LinearLayout>
+
+				<Button
+						android:id="@+id/buttonAdd"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="end"
+						android:text="@string/add" />
+
+				<View
+						android:layout_width="match_parent"
+						android:layout_height="1dp"
+						android:layout_marginTop="2dp"
+						android:layout_marginBottom="4dp"
+						android:background="#646464" />
+
+			</LinearLayout>
+		</LinearLayout>
+
+	</androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home"
+              android:icon="@drawable/ic_home"
+              android:title="@string/drawer_home"/>
+        <item android:id="@+id/nav_timetable"
+              android:icon="@drawable/ic_timetable"
+              android:title="@string/drawer_timetable"/>
+        <item android:id="@+id/nav_substitution"
+              android:icon="@drawable/ic_substitution"
+              android:title="@string/drawer_substitution"/>
+    </group>
+
+    <item android:title="@string/drawer_group_settings">
+        <menu>
+            <item
+                    android:id="@+id/nav_subject_manager"
+                    android:title="@string/drawer_subjects" />
+            <item
+                    android:id="@+id/nav_learning"
+                    android:title="@string/drawer_learning" />
+
+        </menu>
+    </item>
+</menu>
